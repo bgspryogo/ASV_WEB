@@ -1,0 +1,129 @@
+/* ============================================================
+   PAGE BODY
+   ============================================================ */
+.page-body {
+  height: calc(100dvh - var(--header-height));
+  padding: var(--space-sm);
+}
+
+/* ============================================================
+   TRACKER / DATA LOG PAGE LAYOUT
+   ============================================================ */
+.tracker-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-sm);
+  height: 100%;
+}
+
+.capture-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.capture-panel {
+  flex: 1;
+  min-height: 0;
+}
+
+/* ============================================================
+   CHECKPOINT SCROLL AREA
+   ============================================================ */
+.checkpoint-scroll {
+  position: absolute;
+  top: calc(var(--space-sm) * 2 + 1.5rem); /* below the label chip */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  padding: var(--space-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+
+.checkpoint-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+.checkpoint-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.checkpoint-scroll::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: var(--radius-pill);
+}
+
+/* ============================================================
+   CHECKPOINT CARD
+   ============================================================ */
+.checkpoint-card {
+  background-color: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  flex-shrink: 0;
+}
+
+.checkpoint-title {
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.checkpoint-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xs);
+}
+
+.checkpoint-cell {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-xs) var(--space-sm);
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+}
+
+.checkpoint-cell--green {
+  background-color: rgba(35, 134, 54, 0.2);
+  border-color: rgba(35, 134, 54, 0.5);
+  color: #3fb950;
+}
+
+.checkpoint-cell--red {
+  background-color: rgba(218, 54, 51, 0.2);
+  border-color: rgba(218, 54, 51, 0.5);
+  color: #f85149;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 720px) {
+  .tracker-grid {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+}
+
+.checkpoint-cell--blue {
+  background-color: rgba(47, 129, 247, 0.2);
+  border-color: rgba(47, 129, 247, 0.5);
+  color: #2f81f7;
+}
+
+/* span both columns when only one cell in the row */
+.checkpoint-cell--full {
+  grid-column: 1 / -1;
+}

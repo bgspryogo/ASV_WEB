@@ -128,7 +128,7 @@ function Monitoring() {
               )}
             </div>
             <div className="panel data-panel">
-              <span className="panel__label">Watchdog</span>
+              <span className="panel__label">Watchdog Time</span>
               {telemetry.watchdog && (
                 <span className="panel__value">
                   {telemetry.watchdog.status}
