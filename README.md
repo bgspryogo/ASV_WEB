@@ -1,3 +1,9 @@
+# Setup and Installation
+
+- npm create vite@latest (setup react)
+- npm install react-router-dom react-leaflet leaflet (setup libraries)
+- npm run dev (run react)
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
