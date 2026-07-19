@@ -1,0 +1,92 @@
+/* ============================================================
+   MONITORING PAGE LAYOUT
+   ============================================================ */
+.monitoring-grid {
+  display: grid;
+  grid-template-columns: 2fr 3fr 2fr;
+  gap: var(--space-sm);
+  height: 89dvh;
+}
+
+.webcam-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.webcam-panel {
+  flex: 1;
+  min-height: 0;
+}
+
+.middle-column {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: var(--space-sm);
+}
+
+.sog-cog-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+}
+
+.data-panel {
+  min-height: 5rem;
+}
+
+.gps-panel {
+  min-height: 0;
+}
+
+.info-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.info-panel {
+  flex: 1;
+  min-height: 0;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1024px) {
+  .monitoring-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  .middle-column {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .info-stack {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .webcam-stack {
+    grid-column: 1;
+    grid-row: 1;
+  }
+}
+
+@media (max-width: 720px) {
+  .monitoring-grid {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+}
+.panel__value {
+  position: absolute;
+  bottom: var(--space-sm);
+  left: var(--space-sm);
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  color: var(--color-text);
+  z-index: 5;
+}
