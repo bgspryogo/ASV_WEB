@@ -8,6 +8,15 @@
   height: 89dvh;
 }
 
+.leaflet-container {
+  z-index: 0;
+}
+
+
+.panel__label {
+  z-index: 999;
+}
+
 .webcam-stack {
   display: flex;
   flex-direction: column;
